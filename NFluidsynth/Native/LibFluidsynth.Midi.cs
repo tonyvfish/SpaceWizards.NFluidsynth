@@ -13,7 +13,7 @@ namespace NFluidsynth.Native
     internal static unsafe partial class LibFluidsynth
     {
 
-#if NET472 || NETCOREAPP
+#if NETCOREAPP
         const UnmanagedType LP_Str = System.Runtime.InteropServices.UnmanagedType.LPUTF8Str;
 #else
         const UnmanagedType LP_Str = System.Runtime.InteropServices.UnmanagedType.LPStr;

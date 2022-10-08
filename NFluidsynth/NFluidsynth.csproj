@@ -1,22 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+    <Version>0.0.0</Version>
+    <AssemblyName>SpaceWizards.NFluidsynth</AssemblyName>
     <RootNamespace>NFluidsynth</RootNamespace>
-    <AssemblyName>NFluidsynth</AssemblyName>
-    <Copyright>atsushi</Copyright>
-    <Authors>atsushi</Authors>
+    <IncludeSymbols>true</IncludeSymbols>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>7.3</LangVersion>
-    <Version>0.2.0</Version>
-    <Description>.NET binding to Fluidsynth.</Description>
-    <PackageProjectUrl>https://github.com/space-wizards/nfluidsynth</PackageProjectUrl>
+    
+    <!-- Temporary until more things are documented properly. -->
+    <NoWarn>CS1591</NoWarn>
+    
+    <!-- NuGet properties. --> 
+    <PackageId>SpaceWizards.NFluidsynth</PackageId>
+    <Authors>atsushi, Space Wizards</Authors>
+    <RepositoryType>Git</RepositoryType>
+    <PackageProjectUrl>https://github.com/space-wizards/SpaceWizards.NFluidsynth</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/space-wizards/SpaceWizards.NFluidsynth/blob/wizards/RELEASE-NOTES.md</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <TargetFrameworks>net472;netcoreapp3.1;netstandard2.1</TargetFrameworks>
+    <PackageTags>fluidsynth,nfluidsynth,midi,audio</PackageTags>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>SpaceWizards.NFluidsynth offers C# libfluidsynth bindings.</Description>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>    
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
+  
   <ItemGroup>
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Condition="'$(TargetFramework)' == 'net472'" Include="System.Memory" Version="4.5.3" />
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
+  
 </Project>

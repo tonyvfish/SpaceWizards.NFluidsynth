@@ -29,7 +29,7 @@ namespace NFluidsynth
             LibFluidsynth.fluid_player_add(Handle, midifile);
         }
 
-        #if NET472 || NETCOREAPP
+        #if NETCOREAPP
         public unsafe void AddMem(ReadOnlySpan<byte> buffer)
         {
             ThrowIfDisposed();

@@ -68,7 +68,7 @@ namespace NFluidsynth
             return ret;
         }
 
-        #if NET472 || NETCOREAPP
+        #if NETCOREAPP
         public unsafe bool Sysex (ReadOnlySpan<byte> input, Span<byte> output, bool dryRun = false)
         {
             fixed (byte* iPtr = input)
@@ -559,7 +559,7 @@ namespace NFluidsynth
 
         #region Tuning
 
-        #if NET472 || NETCOREAPP
+        #if NETCOREAPP
         public unsafe void ActivateKeyTuning (int bank, int prog, string name, ReadOnlySpan<double> pitch, bool apply)
         {
             fixed (double* pPtr = pitch)
@@ -590,7 +590,7 @@ namespace NFluidsynth
             }
         }
 
-        #if NET472 || NETCOREAPP
+        #if NETCOREAPP
         public unsafe void ActivateOctaveTuning (int bank, int prog, string name, ReadOnlySpan<double> pitch,
             bool apply)
         {
@@ -620,7 +620,7 @@ namespace NFluidsynth
             }
         }
 
-        #if NET472 || NETCOREAPP
+        #if NETCOREAPP
         public unsafe void TuneNotes (int bank, int prog, ReadOnlySpan<int> keys, ReadOnlySpan<double> pitch,
             bool apply)
         {
@@ -713,7 +713,7 @@ namespace NFluidsynth
             }
         }
 
-        #if NET472 || NETCOREAPP
+        #if NETCOREAPP
         public unsafe void WriteSample16 (int count, Span<ushort> leftOut, int leftOffset, int leftIncrement,
             Span<ushort> rightOut, int rightOffset, int rightIncrement)
         {
@@ -761,7 +761,7 @@ namespace NFluidsynth
             }
         }
 
-        #if NET472 || NETCOREAPP
+        #if NETCOREAPP
         public unsafe void WriteSampleFloat (int count, Span<float> leftOut, int leftOffset, int leftIncrement,
             Span<float> rightOut, int rightOffset, int rightIncrement)
         {
