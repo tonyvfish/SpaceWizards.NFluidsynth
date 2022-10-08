@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFluidsynth.Sample", "NFlui
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFluidsynth", "NFluidsynth\NFluidsynth.csproj", "{79326AFF-EA30-479B-A48E-77CF5AB99EF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFluidsynth.MidiAccess", "NFluidsynth.MidiAccess\NFluidsynth.MidiAccess.csproj", "{1C0A7DD2-6F9A-457A-A70C-7BF23E5E6D2C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Generator\Generator.csproj", "{88515D61-D3DD-4D16-A6C0-23802B8CC089}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,14 +25,6 @@ Global
 		{79326AFF-EA30-479B-A48E-77CF5AB99EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79326AFF-EA30-479B-A48E-77CF5AB99EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79326AFF-EA30-479B-A48E-77CF5AB99EF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C0A7DD2-6F9A-457A-A70C-7BF23E5E6D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C0A7DD2-6F9A-457A-A70C-7BF23E5E6D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C0A7DD2-6F9A-457A-A70C-7BF23E5E6D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C0A7DD2-6F9A-457A-A70C-7BF23E5E6D2C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88515D61-D3DD-4D16-A6C0-23802B8CC089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88515D61-D3DD-4D16-A6C0-23802B8CC089}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88515D61-D3DD-4D16-A6C0-23802B8CC089}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88515D61-D3DD-4D16-A6C0-23802B8CC089}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = NFluidsynth.Sample\NFluidsynth.Sample.csproj
