@@ -1,4 +1,6 @@
-# NFluidsynth (Space Wizards Edition) ![Build & Test](https://github.com/space-wizards/SpaceWizards.NFluidsynth/workflows/Build%20&%20Test/badge.svg) [![NuGet link](https://img.shields.io/nuget/v/SpaceWizards.NFluidsynth)](https://www.nuget.org/packages/SpaceWizards.NFluidsynth)
+# NFluidsynth (Space Wizards Edition)
+![Build & Test](https://github.com/space-wizards/SpaceWizards.NFluidsynth/workflows/Build%20&%20Test/badge.svg) [![NuGet link](https://img.shields.io/nuget/v/SpaceWizards.NFluidsynth)](https://www.nuget.org/packages/SpaceWizards.NFluidsynth)
+
 NFluidsynth is a C# binding for [libfluidsynth](https://github.com/Fluidsynth/fluidsynth/).
 
 It is a P/Invoke wrapper, therefore you need native libfluidsynth.so / libfluidsynth.dylib / (lib)fluidsynth.dll.
