@@ -51,56 +51,90 @@ namespace NFluidsynth.Native
         [DllImport(LibraryName)]
         internal static extern void fluid_event_bank_select(fluid_event_t_ptr evt, int channel, short bank_num);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_program_change(fluid_event_t_ptr evt, int channel, short preset_num);
+        [DllImport(LibraryName, EntryPoint="fluid_event_program_change")]
+        internal static extern void fluid_event_program_change_2(fluid_event_t_ptr evt, int channel, short preset_num);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_program_change")]
+        internal static extern void fluid_event_program_change_3(fluid_event_t_ptr evt, int channel, int preset_num);
 
         [DllImport(LibraryName)]
         internal static extern void fluid_event_program_select(fluid_event_t_ptr evt, int channel, uint
             sfont_id, short bank_num, short preset_num);
 
         /* Real-time generic instrument controllers */
-        [DllImport(LibraryName)]
+        [DllImport(LibraryName, EntryPoint="fluid_event_control_change")]
         internal static extern
-            void fluid_event_control_change(fluid_event_t_ptr evt, int channel, short control, short val);
+            void fluid_event_control_change_2(fluid_event_t_ptr evt, int channel, short control, short val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_control_change")]
+        internal static extern
+            void fluid_event_control_change_3(fluid_event_t_ptr evt, int channel, short control, int val);
 
         /* Real-time instrument controllers shortcuts */
         [DllImport(LibraryName)]
         internal static extern void fluid_event_pitch_bend(fluid_event_t_ptr evt, int channel, int val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_pitch_wheelsens(fluid_event_t_ptr evt, int channel, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_pitch_wheelsens")]
+        internal static extern void fluid_event_pitch_wheelsens_2(fluid_event_t_ptr evt, int channel, short val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_modulation(fluid_event_t_ptr evt, int channel, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_pitch_wheelsens")]
+        internal static extern void fluid_event_pitch_wheelsens_3(fluid_event_t_ptr evt, int channel, int val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_sustain(fluid_event_t_ptr evt, int channel, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_modulation")]
+        internal static extern void fluid_event_modulation_2(fluid_event_t_ptr evt, int channel, short val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_pan(fluid_event_t_ptr evt, int channel, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_modulation")]
+        internal static extern void fluid_event_modulation_3(fluid_event_t_ptr evt, int channel, int val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_volume(fluid_event_t_ptr evt, int channel, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_sustain")]
+        internal static extern void fluid_event_sustain_2(fluid_event_t_ptr evt, int channel, short val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_reverb_send(fluid_event_t_ptr evt, int channel, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_sustain")]
+        internal static extern void fluid_event_sustain_3(fluid_event_t_ptr evt, int channel, int val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_chorus_send(fluid_event_t_ptr evt, int channel, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_pan")]
+        internal static extern void fluid_event_pan_2(fluid_event_t_ptr evt, int channel, short val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_key_pressure(fluid_event_t_ptr evt, int channel, short key, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_pan")]
+        internal static extern void fluid_event_pan_3(fluid_event_t_ptr evt, int channel, int val);
 
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_channel_pressure(fluid_event_t_ptr evt, int channel, short val);
+        [DllImport(LibraryName, EntryPoint="fluid_event_volume")]
+        internal static extern void fluid_event_volume_2(fluid_event_t_ptr evt, int channel, short val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_volume")]
+        internal static extern void fluid_event_volume_3(fluid_event_t_ptr evt, int channel, int val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_reverb_send")]
+        internal static extern void fluid_event_reverb_send_2(fluid_event_t_ptr evt, int channel, short val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_reverb_send")]
+        internal static extern void fluid_event_reverb_send_3(fluid_event_t_ptr evt, int channel, int val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_chorus_send")]
+        internal static extern void fluid_event_chorus_send_2(fluid_event_t_ptr evt, int channel, short val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_chorus_send")]
+        internal static extern void fluid_event_chorus_send_3(fluid_event_t_ptr evt, int channel, int val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_key_pressure")]
+        internal static extern void fluid_event_key_pressure_2(fluid_event_t_ptr evt, int channel, short key, short val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_key_pressure")]
+        internal static extern void fluid_event_key_pressure_3(fluid_event_t_ptr evt, int channel, short key, int val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_channel_pressure")]
+        internal static extern void fluid_event_channel_pressure_2(fluid_event_t_ptr evt, int channel, short val);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_channel_pressure")]
+        internal static extern void fluid_event_channel_pressure_3(fluid_event_t_ptr evt, int channel, int val);
 
         [DllImport(LibraryName)]
         internal static extern void fluid_event_system_reset(fluid_event_t_ptr evt);
 
 
         /* Only for removing events */
-        [DllImport(LibraryName)]
-        internal static extern void fluid_event_any_control_change(fluid_event_t_ptr evt, int channel);
+        [DllImport(LibraryName, EntryPoint="fluid_event_any_control_change")]
+        internal static extern void fluid_event_any_control_change_2(fluid_event_t_ptr evt, int channel);
 
         /* Only when unregistering clients */
         [DllImport(LibraryName)]
@@ -128,11 +162,17 @@ namespace NFluidsynth.Native
         [DllImport(LibraryName)]
         internal static extern short fluid_event_get_control(fluid_event_t_ptr evt);
 
-        [DllImport(LibraryName)]
-        internal static extern short fluid_event_get_value(fluid_event_t_ptr evt);
+        [DllImport(LibraryName, EntryPoint="fluid_event_get_value")]
+        internal static extern short fluid_event_get_value_2(fluid_event_t_ptr evt);
 
-        [DllImport(LibraryName)]
-        internal static extern short fluid_event_get_program(fluid_event_t_ptr evt);
+        [DllImport(LibraryName, EntryPoint="fluid_event_get_value")]
+        internal static extern int fluid_event_get_value_3(fluid_event_t_ptr evt);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_get_program")]
+        internal static extern short fluid_event_get_program_2(fluid_event_t_ptr evt);
+
+        [DllImport(LibraryName, EntryPoint="fluid_event_get_program")]
+        internal static extern int fluid_event_get_program_3(fluid_event_t_ptr evt);
 
         [DllImport(LibraryName)]
         internal static extern void* fluid_event_get_data(fluid_event_t_ptr evt);
