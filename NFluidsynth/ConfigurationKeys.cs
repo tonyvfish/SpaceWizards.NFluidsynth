@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 
 namespace NFluidsynth
 {
@@ -52,6 +53,7 @@ namespace NFluidsynth
 		public const string MidiJackServer = "midi.jack.server";
 		public const string MidiOssDevice = "midi.oss.device";
 		public const string MidiPortName = "midi.portname";
-	}
+        public const string MidiPlayerResetSynth = "player.reset-synth";
+    }
 }
 

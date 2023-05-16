@@ -58,6 +58,12 @@ namespace NFluidsynth.Native
                             if (NativeLibrary.TryLoad("libfluidsynth.dylib", assembly, path, out handle))
                                 return handle;
                         }
+
+                        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                        {
+                            if (NativeLibrary.TryLoad("libfluidsynth-3.dll", assembly, path, out handle))
+                                return handle;
+                        }
                     }
 
                     return IntPtr.Zero;

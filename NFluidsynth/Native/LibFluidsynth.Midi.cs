@@ -20,6 +20,8 @@ namespace NFluidsynth.Native
 #endif
         internal delegate int handle_midi_event_func_t(void* data, fluid_midi_event_t_ptr evt);
 
+        internal delegate int handle_midi_tick_func_t(void* data, int ticks);
+
         [DllImport(LibraryName)]
         internal static extern fluid_midi_event_t_ptr new_fluid_midi_event();
 
@@ -177,6 +179,12 @@ namespace NFluidsynth.Native
         [DllImport(LibraryName)]
         internal static extern int fluid_player_set_playback_callback(fluid_player_t_ptr player,
             IntPtr handler, void* handlerData);
+
+        [DllImport(LibraryName)]
+        internal static extern int fluid_player_set_tick_callback(fluid_player_t_ptr player,
+            IntPtr handler,
+            void* handlerData
+        );		
 
         [DllImport(LibraryName)]
         internal static extern FluidPlayerStatus fluid_player_get_status(fluid_player_t_ptr player);

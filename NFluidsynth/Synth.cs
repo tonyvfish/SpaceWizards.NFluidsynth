@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Text;
 using NFluidsynth.Native;
 
@@ -866,6 +867,14 @@ namespace NFluidsynth
 
             return true;
         }
+
+        public int CallDefaultHandler(MidiEvent midiEvent)
+        {
+            var result  = LibFluidsynth.fluid_synth_handle_midi_event(Handle, midiEvent.Handle);
+
+            return result;
+        }
+
 
         public int AllNotesOff(int channel)
         {

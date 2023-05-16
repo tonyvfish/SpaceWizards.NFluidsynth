@@ -7,6 +7,7 @@ namespace NFluidsynth
     {
         // Keep this here so the GC doesn't erase it from existence
         private LibFluidsynth.handle_midi_event_func_t _handler;
+        private LibFluidsynth.handle_midi_tick_func_t _tickHandler;
 
         public Player(Synth synth)
             : base(LibFluidsynth.new_fluid_player(synth.Handle))
@@ -154,6 +155,21 @@ namespace NFluidsynth
                         }
                     }, out var b), null);
             _handler = b;
+        }
+
+        public unsafe void SetTicksCallback(MidiTickHandler handler)
+        {
+            ThrowIfDisposed();
+            LibFluidsynth.fluid_player_set_tick_callback(
+                                                        Handle,
+                                                        Utility.PassDelegatePointer<LibFluidsynth.handle_midi_tick_func_t>(
+                                                            (d, e) =>
+                                                            {
+                                                               
+                                                                    return handler(e);
+                                                                
+                                                            }, out var b),null);
+            _tickHandler = b;
         }
 
         public FluidPlayerStatus Status
