@@ -5,9 +5,9 @@ using NFluidsynth.Native;
 
 namespace NFluidsynth
 {
-    public class Synth : FluidsynthObject
+    public class Synth : FluidsynthObject, ISynth
     {
-        public Synth(Settings settings)
+        public Synth(ISettings settings)
             : base(LibFluidsynth.new_fluid_synth(settings.Handle))
         {
             Settings = settings;
@@ -23,7 +23,7 @@ namespace NFluidsynth
             base.Dispose(disposing);
         }
 
-        public Settings Settings { get; }
+        public ISettings Settings { get; }
 
         private static void OnError(string message)
         {
@@ -868,7 +868,7 @@ namespace NFluidsynth
             return true;
         }
 
-        public int CallDefaultHandler(MidiEvent midiEvent)
+        public int CallDefaultHandler(IMidiEvent midiEvent)
         {
             var result  = LibFluidsynth.fluid_synth_handle_midi_event(Handle, midiEvent.Handle);
 

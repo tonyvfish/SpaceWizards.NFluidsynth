@@ -3,13 +3,13 @@ using NFluidsynth.Native;
 
 namespace NFluidsynth
 {
-    public class Player : FluidsynthObject
+    public class Player : FluidsynthObject, IPlayer
     {
         // Keep this here so the GC doesn't erase it from existence
         private LibFluidsynth.handle_midi_event_func_t _handler;
         private LibFluidsynth.handle_midi_tick_func_t _tickHandler;
 
-        public Player(Synth synth)
+        public Player(ISynth synth)
             : base(LibFluidsynth.new_fluid_player(synth.Handle))
         {
         }
@@ -36,6 +36,10 @@ namespace NFluidsynth
             ThrowIfDisposed();
             fixed (byte* ptr = buffer)
                 AddMem ((IntPtr) ptr, buffer.Length);
+        }
+        public unsafe void AddMem(byte [] buffer)
+        {
+           AddMem (new ReadOnlySpan<byte>(buffer));
         }
         #endif
         

@@ -59,7 +59,8 @@ namespace NFluidsynth
     {
         Ready,
         Playing,
-        Done,
+        Stopping,
+        Done
     }
 
     // event.h

@@ -3,7 +3,7 @@ using NFluidsynth.Native;
 
 namespace NFluidsynth
 {
-    public class MidiEvent : FluidsynthObject
+    public class MidiEvent : FluidsynthObject, IMidiEvent
     {
         private readonly bool _owned;
 

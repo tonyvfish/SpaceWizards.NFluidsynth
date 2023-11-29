@@ -2,11 +2,11 @@
 
 namespace NFluidsynth
 {
-    public class AudioDriver : FluidsynthObject
+    public class AudioDriver : FluidsynthObject, IAudioDriver
     {
         public delegate int AudioHandler(float[][] outBuffer);
 
-        public AudioDriver(Settings settings, Synth synth)
+        public AudioDriver(ISettings settings, ISynth synth)
             : base(LibFluidsynth.new_fluid_audio_driver(settings.Handle, synth.Handle))
         {
         }
